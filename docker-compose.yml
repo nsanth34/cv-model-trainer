@@ -1,0 +1,19 @@
+services:
+  basketball-analysis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nba-court-tracker
+    volumes:
+      - ./input_videos:/app/input_videos
+      - ./output_videos:/app/output_videos
+      - ./stubs:/app/stubs
+      - ./images:/app/images
+      - ./configs:/app/configs
+      - ./models:/app/models
+      - ./nba_court_tracker:/app/nba_court_tracker
+    working_dir: /app
+    #command: >
+    #  input_videos/video_3.mp4
+    #  --output_video output_videos/output_result_3.avi
+    #  --stub_path stubs
